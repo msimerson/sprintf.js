@@ -5,7 +5,7 @@
 * ci: automatically test on ubuntu & windows
 * ci: automatically test on the LTS versions of node.js
 * deps: remove mocha & eslint, they get auto-installed by npx when needed
-
+* doc(README): update CI badge URL, remove broken badges
 
 ## 1.1.3
 
