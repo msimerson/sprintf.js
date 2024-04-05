@@ -45,6 +45,7 @@ jobs:
     strategy:
       matrix:
         node-version: ${{ fromJson(needs.get-lts.outputs.active) }}
+        node-version: 10
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
