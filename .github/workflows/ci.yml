@@ -46,7 +46,7 @@ jobs:
       matrix:
         node: ${{ fromJson(needs.get-lts.outputs.active) }}
         include:
-          - node: 10
+          - node: 12
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
