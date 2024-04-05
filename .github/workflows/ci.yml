@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
       - uses: actions/checkout@v4
       - run: npm install
-      - run: npm install eslint@^8
+      - run: npm install eslint@^7
       - run: npm run lint
 
   coverage:
@@ -40,13 +40,13 @@ jobs:
           github-token: ${{ secrets.github_token }}
 
   ubuntu:
-    needs: [lint, get-lts]
+    needs: [get-lts]
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node: ${{ fromJson(needs.get-lts.outputs.active) }}
         include:
-          - node: 12
+          - node: 10
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
