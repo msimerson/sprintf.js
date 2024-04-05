@@ -44,15 +44,16 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        - node-version: ${{ fromJson(needs.get-lts.outputs.active) }}
-        - node-version: 10
+        node:
+          - version: ${{ fromJson(needs.get-lts.outputs.active) }}
+          - version: 10
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        name: Node ${{ matrix.node-version }} on ubuntu-latest
+        name: Node ${{ matrix.node.version }} on ubuntu-latest
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node.version }}
       - run: npm install
       - run: npm run test
 
