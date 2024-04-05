@@ -7,8 +7,8 @@
   "scripts": {
     "test": "npx mocha test/*.js",
     "pretest": "npm run lint",
-    "lint": "npx eslint@^8 .",
-    "lint:fix": "npx eslint@^8 --fix ."
+    "lint": "npx eslint@^7 .",
+    "lint:fix": "npx eslint@^7 --fix ."
   },
   "repository": {
     "type": "git",
